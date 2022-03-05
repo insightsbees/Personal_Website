@@ -9,14 +9,14 @@ import base64
 
 
 with st.sidebar:
-    choose = option_menu("Main Menu", ["About","Resume", "Projects", "Blog","Apps", "Contact"],
-                         icons=['house','file-person', 'bar-chart-line','file-slides','app-indicator','person lines fill'],
+    choose = option_menu("Main Menu", ["About", "Projects", "Blog","Apps", "Contact"],
+                         icons=['house', 'bar-chart-line','file-slides','app-indicator','person lines fill'],
                          menu_icon="list", default_index=0,
                          styles={
         "container": {"padding": "5!important", "background-color": "#fafafa"},
         "icon": {"color": "orange", "font-size": "25px"}, 
         "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#E97328"},
+        "nav-link-selected": {"background-color": "#24A608"},
     }
     )
 
@@ -54,7 +54,7 @@ elif choose == "Blog":
         def show_pdf(file_path):
                         with open(file_path,"rb") as f:
                             base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-                        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+                        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="800" height="800" type="application/pdf"></iframe>'
                         st.markdown(pdf_display, unsafe_allow_html=True)
 
         #st.markdown('<p class="font">Featured Posts</p>', unsafe_allow_html=True)  
@@ -120,11 +120,11 @@ elif choose == "Blog":
                 #st.button('Read PDF Tutorial', key='1')
  
                 if st.button('Read PDF Tutorial',key='7'): 
-                    def show_pdf(file_path):
-                        with open(file_path,"rb") as f:
-                            base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-                        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-                        st.markdown(pdf_display, unsafe_allow_html=True)
+                    # def show_pdf(file_path):
+                    #     with open(file_path,"rb") as f:
+                    #         base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+                    #     pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+                    #     st.markdown(pdf_display, unsafe_allow_html=True)
             
                     show_pdf('post3.pdf')
             with col2:
